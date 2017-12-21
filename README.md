@@ -138,7 +138,11 @@ Vue.use(VueRaven, {
 
 ## Live demo
 
+We create a small [example](https://jsfiddle.net/anteriovieira/cprfeqrj/) so you can see the plugin in action.
+
 [jsfiddle](https://jsfiddle.net/anteriovieira/cprfeqrj/)
+
+![error](https://raw.githubusercontent.com/anteriovieira/vue-raven/master/examples/media/error.png)
 
 ## License
 
