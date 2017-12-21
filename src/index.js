@@ -4,11 +4,12 @@ import RavenVue from 'raven-js/plugins/vue'
 function plugin (Vue, options = {}) {
   // Merge options
   const _options = Object.assign({
+    disableReport: options.disableReport || false,
     disableAutoReport: options.disableAutoReport || false,
-    dsn: options.dsn || null,
-    public_dsn: options.public_dsn || null,
-    public_key: options.public_key || null,
-    private_key: options.private_key || null,
+    dsn: options.dsn || '',
+    public_dsn: options.public_dsn || '',
+    public_key: options.public_key || '',
+    private_key: options.private_key || '',
     host: options.host || 'sentry.io',
     protocol: options.protocol || 'https',
     project_id: options.project_id || '',
@@ -18,15 +19,19 @@ function plugin (Vue, options = {}) {
     }
   }, options)
 
+  if (_options.disableReport) {
+    return
+  }
+
   // Generate DSN
-  if (!options.dsn || !options.dsn.length) {
-    options.dsn = `${options.protocol}://${options.public_key}` +
-      `:${options.private_key}@${options.host}${options.path}${options.project_id}`
+  if (!_options.dsn || !_options.dsn.length) {
+    _options.dsn = `${_options.protocol}://${_options.public_key}` +
+      `:${_options.private_key}@${_options.host}${_options.path}${_options.project_id}`
   }
 
   // Public DSN (without private key)
-  if (!options.public_dsn || !options.public_dsn.length) {
-    options.public_dsn = options.dsn.replace(/:\w+@/, '@')
+  if (!_options.public_dsn || !_options.public_dsn.length) {
+    _options.public_dsn = _options.dsn.replace(/:\w+@/, '@')
   }
 
   // config raven
