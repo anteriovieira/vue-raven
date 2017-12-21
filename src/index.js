@@ -50,8 +50,11 @@ function plugin (Vue, options = {}) {
 
 // Install by default if using the script tag
 if (typeof window !== 'undefined' && window.Vue) {
-  // @TODO Add suport fot CDN
-  window.Vue.use(plugin, {})
+  Object.defineProperty(window, 'VueRaven', {
+    get () {
+      return plugin
+    }
+  })
 }
 
 export default plugin
