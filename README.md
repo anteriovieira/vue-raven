@@ -43,8 +43,6 @@ Vue.use(VueRaven, {
 | path | `String` | `null` | Will be ignored if dsn provided. |
 | disableAutoReport | `Boolean` | `false` | Disable auto report |
 
-
-
 ## Reporting Errors
 
 ### Disable auto report
@@ -99,43 +97,20 @@ export default {
     }
   }
 }
-
-## Development
-
-### Launch visual tests
-
-```bash
-npm run dev
 ```
 
-### Launch Karma with coverage
+## Environment
 
-```bash
-npm run dev:coverage
-```
+By default VueRaven defines the environment as production, but you are free to configure this option.
 
-### Build
+```js
+import Vue from 'vue'
+import VueRaven from 'vue-raven'
 
-Bundle the js and css of to the `dist` folder:
-
-```bash
-npm run build
-```
-
-
-## Publishing
-
-The `prepublish` hook will ensure dist files are created before publishing. This
-way you don't need to commit them in your repository.
-
-```bash
-# Bump the version first
-# It'll also commit it and create a tag
-npm version
-# Push the bumped package and tags
-git push --follow-tags
-# Ship it 🚀
-npm publish
+Vue.use(VueRaven, {
+  dns: 'https://<key>@sentry.io/<project>'
+  dev: process.env.NODE_ENV !== 'production',
+})
 ```
 
 ## License
