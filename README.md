@@ -27,6 +27,29 @@ Vue.use(VueRaven, {
 })
 ```
 
+### Browser
+
+```html
+<!-- Include after Vue -->
+
+<!-- Local files -->
+<script src="vue-raven/dist/vue-raven.js"></script>
+
+<!-- From CDN -->
+<script src="https://unpkg.com/vue-raven"></script>
+
+<script>
+Vue.use(VueRaven, {
+  dns: 'https://<key>@sentry.io/<project>'
+})
+
+const app = new Vue({
+  el: '#app',
+  // ...
+}) 
+</script>
+```
+
 > Only these settings allow VueRaven capture any uncaught exception.
 
 ## Options
@@ -112,6 +135,10 @@ Vue.use(VueRaven, {
   dev: process.env.NODE_ENV !== 'production',
 })
 ```
+
+## Live demo
+
+[jsfiddle](https://jsfiddle.net/anteriovieira/cprfeqrj/)
 
 ## License
 
