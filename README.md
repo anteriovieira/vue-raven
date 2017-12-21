@@ -29,7 +29,7 @@ Vue.use(VueRaven, {
 
 > Only these settings allow VueRaven capture any uncaught exception.
 
-### Options
+## Options
 
 | Option  | Type | Default  | Info |
 | ------------- | ------------- | ------------- | ------------- |
@@ -43,16 +43,7 @@ Vue.use(VueRaven, {
 | path | `String` | `null` | Will be ignored if dsn provided. |
 | disableAutoReport | `Boolean` | `false` | Disable auto report |
 
-### Browser
 
-```html
-<!-- Include after Vue -->
-<!-- Local files -->
-<script src="vue-raven/dist/vue-raven.js"></script>
-
-<!-- From CDN -->
-<script src="https://unpkg.com/vue-raven"></script>
-```
 
 ## Reporting Errors
 

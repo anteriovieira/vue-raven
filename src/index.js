@@ -50,7 +50,8 @@ function plugin (Vue, options = {}) {
 
 // Install by default if using the script tag
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(plugin)
+  // @TODO Add suport fot CDN 
+  window.Vue.use(plugin, {})
 }
 
 export default plugin
