@@ -17,7 +17,7 @@
     "log"
   ],
   "contributors": [
-    "Antério vieira <anteriovieira@gmail.com>",
+    "Antério vieira <anteriovieira@gmail.com>"
   ],
   "main": "dist/vue-raven.common.js",
   "module": "dist/vue-raven.esm.js",
