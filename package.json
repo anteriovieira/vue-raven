@@ -2,10 +2,22 @@
   "name": "vue-raven",
   "version": "0.1.0",
   "description": "A Vue plugin to reports exceptions",
-  "author": "Antério vieira <anteriovieira@gmail.com>",
+  "author": {
+    "name": "Antério Vieira",
+    "email": "anteriovieira@gmail.com",
+    "url": "https://anteriovieira.github.io"
+  },
+  "private": true,
+  "keywords": [
+    "vue",
+    "raven",
+    "sentry",
+    "error",
+    "tracking",
+    "log"
+  ],
   "contributors": [
     "Antério vieira <anteriovieira@gmail.com>",
-    "Matteo Gabriele <m.gabriele.dev@gmail.com>"
   ],
   "main": "dist/vue-raven.common.js",
   "module": "dist/vue-raven.esm.js",
