@@ -37,23 +37,20 @@
     "build:browser": "cross-env NODE_ENV=browser yon run build:browser:base",
     "build:browser:min": "cross-env NODE_ENV=production yon run build:browser:base -- -p",
     "build:dll": "webpack --progress --config build/webpack.config.dll.js",
-    "lint": "yon run lint:js && yon run lint:css",
-    "lint:js": "eslint --ext js --ext jsx --ext vue src test/**/*.spec.js test/*.js build",
+    "lint": "yon run lint:js",
+    "lint:js": "eslint --ext js src test/**/*.spec.js test/*.js build",
     "lint:js:fix": "yon run lint:js -- --fix",
     "lint:css": "stylelint src/**/*.{vue,css}",
     "lint:staged": "lint-staged",
     "pretest": "yon run lint",
     "dev": "webpack-dashboard -- webpack-dev-server --config build/webpack.config.dev.js --open",
-    "prepublish": "yon run build"
+    "prepublish": "yon run build",
+    "test": "yon run unit"
   },
   "lint-staged": {
     "*.{vue,jsx,js}": [
       "eslint --fix"
     ],
-    "*.{vue,css}": [
-      "stylefmt",
-      "stylelint"
-    ]
   },
   "pre-commit": "lint:staged",
   "devDependencies": {
