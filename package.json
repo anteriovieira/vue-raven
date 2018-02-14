@@ -42,7 +42,6 @@
     "lint:js:fix": "yon run lint:js -- --fix",
     "lint:css": "stylelint src/**/*.{vue,css}",
     "lint:staged": "lint-staged",
-    "pretest": "yon run lint",
     "dev": "webpack-dashboard -- webpack-dev-server --config build/webpack.config.dev.js --open",
     "prepublish": "yon run build",
     "test": "yon run unit"
