@@ -25,7 +25,8 @@
   "style": "dist/vue-raven.css",
   "files": [
     "dist",
-    "src"
+    "src",
+    "types/*.d.ts"
   ],
   "scripts": {
     "clean": "rimraf dist",
@@ -151,5 +152,6 @@
       "<rootDir>/test/.*.js",
       "<rootDir>/test/*/*.js"
     ]
-  }
+  },
+  "typings": "types/index.d.ts"
 }
