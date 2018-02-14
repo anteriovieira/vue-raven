@@ -50,7 +50,7 @@
   "lint-staged": {
     "*.{vue,jsx,js}": [
       "eslint --fix"
-    ],
+    ]
   },
   "pre-commit": "lint:staged",
   "devDependencies": {
