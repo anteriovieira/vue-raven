@@ -1,6 +1,13 @@
 # VueRaven
 
-[![npm](https://img.shields.io/npm/v/vue-raven.svg)](https://www.npmjs.com/package/vue-raven) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+
+[![npm (scoped with tag)](https://img.shields.io/npm/v/vue-raven/latest.svg?style=flat-square)](https://npmjs.com/package/vue-raven)
+[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+[![npm](https://img.shields.io/npm/dt/vue-raven.svg?style=flat-square)](https://npmjs.com/package/vue-raven)
+[![CircleCI](https://img.shields.io/circleci/project/github/anteriovieira/vue-raven.svg?style=flat-square)](https://circleci.com/gh/anteriovieira/vue-raven)
+[![Codecov](https://img.shields.io/codecov/c/github/anteriovieira/vue-raven.svg?style=flat-square)](https://codecov.io/gh/anteriovieira/vue-raven)
+[![Dependencies](https://david-dm.org/buefy/vue-raven/status.svg?style=flat-square)](https://david-dm.org/buefy/vue-raven)
+[![donate](https://img.shields.io/badge/donate-%E2%99%A5-ff5f5f.svg)](https://patreon.com/anteriovieira)
 
  > VueRaven automatically reports uncaught JavaScript exceptions triggered from vue component, and provides a API for reporting your own errors. The captured errors will be reported to the sentry where you can get an overview of your application. If you do not already have a [Sentry account](https://sentry.io), creating your account will be the first step to using this package.
 
