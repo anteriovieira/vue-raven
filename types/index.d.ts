@@ -1,10 +1,10 @@
 import _Vue from "vue"
-import _Raven from 'raven-js'
+import {RavenStatic} from 'raven-js'
 
 // Adds VueRaven method signatures to Vue instance (ie this.$raven)
 declare module 'vue/types/vue' {
   interface Vue {
-    $raven: typeof _Raven,
+    $raven: RavenStatic,
   }
 }
 
