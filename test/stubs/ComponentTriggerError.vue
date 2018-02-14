@@ -8,7 +8,7 @@
 export default {
   name: 'Component',
   methods: {
-    trigger() {
+    trigger () {
       this.$raven.captureException(new Error('foo'))
     }
   }

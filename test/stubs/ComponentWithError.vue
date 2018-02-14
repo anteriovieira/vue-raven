@@ -5,7 +5,7 @@
 <script>
 export default {
   name: 'Component',
-  created() {
+  created () {
     try {
       throw new Error('foo')
     } catch (err) {
