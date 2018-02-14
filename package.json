@@ -29,6 +29,7 @@
   ],
   "scripts": {
     "clean": "rimraf dist",
+    "unit": "jest",
     "build": "yon run build:common && yon run build:browser && yon run build:browser:min",
     "build:common": "cross-env NODE_ENV=common webpack --config build/webpack.config.common.js --progress --hide-modules",
     "build:browser:base": "webpack --config build/webpack.config.browser.js --progress --hide-modules",
@@ -41,9 +42,7 @@
     "lint:css": "stylelint src/**/*.{vue,css}",
     "lint:staged": "lint-staged",
     "pretest": "yon run lint",
-    "test": "cross-env BABEL_ENV=test karma start test/karma.conf.js --single-run",
     "dev": "webpack-dashboard -- webpack-dev-server --config build/webpack.config.dev.js --open",
-    "dev:coverage": "cross-env BABEL_ENV=test karma start test/karma.conf.js",
     "prepublish": "yon run build"
   },
   "lint-staged": {
@@ -57,19 +56,19 @@
   },
   "pre-commit": "lint:staged",
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.11",
     "add-asset-html-webpack-plugin": "^2.0.0",
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.2.0",
     "babel-helper-vue-jsx-merge-props": "^2.0.0",
+    "babel-jest": "^22.2.2",
     "babel-loader": "^7.0.0",
     "babel-plugin-istanbul": "^4.1.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-plugin-transform-vue-jsx": "^3.4.0",
-    "babel-preset-env": "^1.4.0",
-    "chai": "^3.5.0",
-    "chai-dom": "^1.4.0",
+    "babel-preset-env": "^1.6.1",
     "codecov": "^3.0.0",
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
@@ -78,34 +77,24 @@
     "eslint-plugin-vue": "^2.0.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "html-webpack-plugin": "^2.28.0",
-    "karma": "^1.7.0",
-    "karma-chai-dom": "^1.1.0",
-    "karma-chrome-launcher": "^2.1.0",
-    "karma-coverage": "^1.1.0",
-    "karma-mocha": "^1.3.0",
-    "karma-sinon-chai": "^1.3.0",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-spec-reporter": "^0.0.31",
-    "karma-webpack": "^2.0.0",
+    "jest": "^22.2.2",
     "lint-staged": "^3.4.0",
-    "mocha": "^3.3.0",
-    "mocha-css": "^1.0.1",
     "null-loader": "^0.1.1",
     "postcss": "^6.0.0",
     "postcss-cssnext": "^2.10.0",
     "pre-commit": "^1.2.0",
     "rimraf": "^2.6.0",
     "sinon": "2.2.0",
-    "sinon-chai": "^2.10.0",
     "style-loader": "^0.17.0",
     "stylefmt": "^5.3.0",
     "stylelint": "^7.10.0",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-processor-html": "^1.0.0",
     "uppercamelcase": "^3.0.0",
-    "vue": "^2.3.0",
+    "vue": "^2.5.13",
+    "vue-jest": "^2.1.0",
     "vue-loader": "^12.0.0",
-    "vue-template-compiler": "^2.3.0",
+    "vue-template-compiler": "^2.5.13",
     "webpack": "^2.5.0",
     "webpack-bundle-analyzer": "^2.4.0",
     "webpack-dashboard": "^0.4.0",
@@ -144,5 +133,23 @@
   "license": "MIT",
   "dependencies": {
     "raven-js": "^3.21.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/test/*.js",
+      "<rootDir>/test/utils/Helper.vue",
+      "<rootDir>/test/.*.js",
+      "<rootDir>/test/*/*.js"
+    ]
   }
 }

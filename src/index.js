@@ -20,6 +20,14 @@ function plugin (Vue, options = {}) {
   }, options)
 
   if (_options.disableReport) {
+    const api = {}
+
+    // fake api
+    ;['captureException'].forEach(method => {
+      api[method] = () => false
+    })
+
+    Vue.prototype.$raven = api
     return
   }
 
