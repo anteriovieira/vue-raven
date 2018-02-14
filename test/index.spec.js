@@ -7,7 +7,23 @@ import ComponentWithError from './stubs/ComponentWithError'
 import ComponentTriggerError from './stubs/ComponentTriggerError'
 
 describe('VueRaven', () => {
-  describe('install', () => {
+  describe('isntall', () => {
+    it('should install if using the script tag', () => {
+      const localVue = createLocalVue()
+      window.Vue = localVue
+
+      expect(window.Vue).toBe(localVue)
+
+      window.Vue.use(VueRaven, {
+        dsn: 'http://abc@example.com:80/2',
+        disableReport: true
+      })
+
+      expect(window.Vue._installedPlugins[0]).toBe(VueRaven)
+    })
+  })
+
+  describe('config', () => {
     it('should disable report', () => {
       const localVue = createLocalVue()
 
