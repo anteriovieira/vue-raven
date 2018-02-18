@@ -1,10 +1,12 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import sinon from 'sinon'
+import Vue from 'vue'
 import _Raven from 'raven-js'
 import VueRaven from '../src'
 import ComponentRaw from './stubs/ComponentRaw'
 import ComponentWithError from './stubs/ComponentWithError'
 import ComponentTriggerError from './stubs/ComponentTriggerError'
+import ComponentErrorMounted from './stubs/ComponentErrorMounted'
 
 describe('VueRaven', () => {
   describe('isntall', () => {
@@ -98,7 +100,7 @@ describe('VueRaven', () => {
     it('should call the existing error handler', () => {
       const errorHandler = sinon.stub()
       localVue.config.errorHandler = errorHandler
-      localVue.use(VueRaven) // should override errorHandler
+      localVue.use(VueRaven)
 
       const wrapper = mount(ComponentRaw, { localVue })
       const err = new Error('foo')
@@ -109,6 +111,37 @@ describe('VueRaven', () => {
       expect(_Raven.captureException.calledOnce).toBe(true)
       expect(errorHandler.args[0][0]).toBe(err)
       expect(errorHandler.args[0][1]).toBe(vm)
+
+      errorHandler.resetBehavior()
+    })
+
+    it('should pass on errors in renderError to global handler', () => {
+      const err = new Error('renderError')
+      const component = {
+        render () {
+          throw new Error('render')
+        },
+        renderError () {
+          throw err
+        }
+      }
+
+      const fn = () => mount(component, { localVue })
+
+      expect(fn).toThrow('renderError')
+    })
+
+    it('should capture errors when they are thrown', () => {
+      const errorHandler = sinon.stub()
+      Vue.config.errorHandler = errorHandler
+      Vue.use(VueRaven)
+
+      new Vue({
+        render: (h) => h(ComponentErrorMounted)
+      }).$mount()
+
+      expect(errorHandler.calledOnce).toBe(true)
+      expect(_Raven.captureException.calledOnce).toBe(true)
     })
   })
 })
