@@ -16,7 +16,7 @@ describe('VueRaven', () => {
 
       expect(window.Vue).toBe(localVue)
 
-      window.Vue.use(VueRaven, {
+      window.Vue.use(window.VueRaven, {
         dsn: 'http://abc@example.com:80/2',
         disableReport: true
       })
