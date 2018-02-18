@@ -147,6 +147,9 @@
       "<rootDir>/test/utils/Helper.vue",
       "<rootDir>/test/.*.js",
       "<rootDir>/test/*/*.js"
+    ],
+    "setupFiles": [
+      "<rootDir>/test/setup.js"
     ]
   },
   "typings": "types/index.d.ts"
