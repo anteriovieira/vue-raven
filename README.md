@@ -29,7 +29,7 @@ import Vue from 'vue'
 import VueRaven from 'vue-raven'
 
 Vue.use(VueRaven, {
-  dns: 'https://<key>@sentry.io/<project>'
+  dsn: 'https://<key>@sentry.io/<project>'
 })
 ```
 
@@ -46,7 +46,7 @@ Vue.use(VueRaven, {
 
 <script>
 Vue.use(VueRaven, {
-  dns: 'https://<key>@sentry.io/<project>'
+  dsn: 'https://<key>@sentry.io/<project>'
 })
 
 const app = new Vue({
@@ -83,7 +83,7 @@ import Vue from 'vue'
 import VueRaven from 'vue-raven'
 
 Vue.use(VueRaven, {
-  dns: 'https://<key>@sentry.io/<project>'
+  dsn: 'https://<key>@sentry.io/<project>'
   disableAutoReport: true,
 })
 ```
@@ -137,7 +137,7 @@ import Vue from 'vue'
 import VueRaven from 'vue-raven'
 
 Vue.use(VueRaven, {
-  dns: 'https://<key>@sentry.io/<project>'
+  dsn: 'https://<key>@sentry.io/<project>'
   dev: process.env.NODE_ENV !== 'production',
 })
 ```
