@@ -105,11 +105,8 @@
   "dllPlugin": {
     "name": "vuePluginTemplateDeps",
     "include": [
-      "mocha/mocha.js",
-      "style-loader!css-loader!mocha-css",
       "html-entities",
       "vue/dist/vue.js",
-      "chai",
       "core-js/library",
       "url",
       "sockjs-client",
