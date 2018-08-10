@@ -15,7 +15,7 @@ function plugin (Vue, options = {}) {
     project_id: options.project_id || '',
     path: options.path || '/',
     config: {
-      environment: options.dev ? 'development' : 'production'
+      environment: options.environment || 'production'
     }
   }, options)
 
