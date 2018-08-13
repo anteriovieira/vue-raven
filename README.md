@@ -52,7 +52,7 @@ Vue.use(VueRaven, {
 const app = new Vue({
   el: '#app',
   // ...
-}) 
+})
 </script>
 ```
 
@@ -70,7 +70,8 @@ const app = new Vue({
 | protocol | `String` | `https` | Will be ignored if dsn provided. |
 | project_Id | `String` | `null` | Will be ignored if dsn provided. |
 | path | `String` | `null` | Will be ignored if dsn provided. |
-| disableAutoReport | `Boolean` | `false` | Disable auto report |
+| disableAutoReport | `Boolean` | `false` | Disable auto report. |
+| environment | `String` | `production` | Sentry's environment. |
 
 ## Reporting Errors
 
@@ -126,20 +127,6 @@ export default {
     }
   }
 }
-```
-
-## Environment
-
-By default VueRaven defines the environment as production, but you are free to configure this option.
-
-```js
-import Vue from 'vue'
-import VueRaven from 'vue-raven'
-
-Vue.use(VueRaven, {
-  dsn: 'https://<key>@sentry.io/<project>'
-  dev: process.env.NODE_ENV !== 'production',
-})
 ```
 
 ## Live demo
