@@ -126,6 +126,8 @@
   "homepage": "https://github.com/anteriovieira/vue-raven#readme",
   "license": "MIT",
   "dependencies": {
+    "conventional-changelog": "^2.0.3",
+    "execa": "^1.0.0",
     "raven-js": "^3.22.3"
   },
   "jest": {

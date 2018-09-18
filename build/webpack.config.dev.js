@@ -28,7 +28,7 @@ const dllManifest = require(
 
 module.exports = merge(base, {
   entry: {
-    tests: resolve(rootDir, 'visual.js')
+    tests: resolve(rootDir, 'index.spec.js')
   },
   output: {
     path: buildPath,
