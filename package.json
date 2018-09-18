@@ -44,7 +44,8 @@
     "lint:staged": "lint-staged",
     "dev": "webpack-dashboard -- webpack-dev-server --config build/webpack.config.dev.js --open",
     "prepublish": "yon run build",
-    "test": "yon run unit"
+    "test": "yon run unit",
+    "changelog": "node build/utils/changelog.js"
   },
   "lint-staged": {
     "*.{vue,jsx,js}": [
