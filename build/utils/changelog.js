@@ -19,5 +19,5 @@ const gen = module.exports = version => {
   })
 }
 
-const version = require('../../package.json')
+const { version } = require('../../package.json')
 gen(version)
