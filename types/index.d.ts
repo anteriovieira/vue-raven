@@ -29,3 +29,5 @@ declare const _default: {
 };
  
 export default _default;
+export const Raven: RavenStatic;
+export const version: string;
