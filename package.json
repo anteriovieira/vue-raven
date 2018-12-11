@@ -68,11 +68,13 @@
     "babel-plugin-transform-vue-jsx": "^3.4.0",
     "babel-preset-env": "^1.6.1",
     "codecov": "^3.0.0",
+    "conventional-changelog": "^2.0.3",
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
     "eslint-config-vue": "^2.0.0",
     "eslint-plugin-vue": "^2.0.0",
+    "execa": "^1.0.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "html-webpack-plugin": "^2.28.0",
     "jest": "^22.2.2",
@@ -127,8 +129,6 @@
   "homepage": "https://github.com/anteriovieira/vue-raven#readme",
   "license": "MIT",
   "dependencies": {
-    "conventional-changelog": "^2.0.3",
-    "execa": "^1.0.0",
     "raven-js": "^3.22.3"
   },
   "jest": {
