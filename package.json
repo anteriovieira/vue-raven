@@ -1,6 +1,6 @@
 {
   "name": "vue-raven",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Vue plugin to reports exceptions",
   "author": {
     "name": "Antério Vieira",
