@@ -70,6 +70,7 @@ const app = new Vue({
 | protocol | `String` | `https` | Will be ignored if dsn provided. |
 | project_Id | `String` | `null` | Will be ignored if dsn provided. |
 | path | `String` | `null` | Will be ignored if dsn provided. |
+| disableReport | `Boolean` | `false` | Disable all reports. |
 | disableAutoReport | `Boolean` | `false` | Disable auto report. |
 | environment | `String` | `production` | Sentry's environment. |
 
