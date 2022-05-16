@@ -80,7 +80,7 @@
     "jest": "^22.2.2",
     "lint-staged": "^3.4.0",
     "null-loader": "^0.1.1",
-    "postcss": "^6.0.0",
+    "postcss": "^7.0.36",
     "postcss-cssnext": "^2.10.0",
     "pre-commit": "^1.2.0",
     "rimraf": "^2.6.0",
